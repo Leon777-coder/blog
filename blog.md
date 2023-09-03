@@ -6,14 +6,22 @@ Before you read this article, I highly recommend you read this blog article firs
 
 ### VNFD 
 
-We know that network slicing is a technology that allows network operators to divide the physical network infrastructure into multiple customized virtual network slices, each of which can meet specific needs and use cases. These slices can run independently on the same physical network infrastructure. And one of the most important of 5G network slicing is Virtual Network Functions (VNFs). VNFs are virtualized network services running on open computing platforms formerly carried out by proprietary, in this free5GC network slicing experiment, the VNFs we have in the experiment are NFs we have in free5GC, like UPF, NSSF, UDM...etc. And this is what it should be like when you onboard all the VNFs to the Openstack
-
-![vnf on OS]([./vnf.jpg](https://github.com/Leon777-coder/blog/assets/69491904/c36da1be-d22a-4f3a-8af1-69117fc5f04c))
+VNFD, You may have seen this word a few times in Daniel’s blog posts already, but what exactly is VNFD? Before I tell you the answer directly, there is something I want to know first.
 
 
-You might have seen this words a few times already, but what is VNFD?
+We know that network slicing is a technology that allows network operators to divide physical network infrastructure into multiple customized virtual network slices, and each of the slices can meet specific requirements for specific use cases.  One of the most important functions of 5G network slicing is the virtual network function (VNF). VNF is a virtualized network service running on an open computing platform. In this free5GC network slicing experiment, the VNF in our experiment is our NF in free5GC, such as UPF, NSSF, UDM... etc. When you load all your VNFs into Openstack, it should be like this:
 
-VNFD's full name is [ Virtual Network Function Descriptor ].
+![vnf on OS](https://github.com/Leon777-coder/blog/assets/69491904/c36da1be-d22a-4f3a-8af1-69117fc5f04c)
+
+
+
+
+VNFD's full name is [ Virtual Network Function Descriptor ]. VNFD acts as a blueprint or template for VNF. A VNFD is a deployment template that describes a VNF in terms of deployment and operational behavior requirements. It also contains connectivity, interface, and virtualized resource requirements.
+The VNFD conforms to the GS NFV-SOL 001 specifications and standards specified by ETSI. The Virtual Network Function Descriptor (VNFD) file describes the instantiation parameters and operational behaviors of the VNFs. It contains KPIs, and other key requirements that can be used in the process of onboarding and managing the lifecycle of a VNF. Therefore, if you onboard all your VNFs successfully, then your VNFD should be like this:
+
+
+Be noticed that the VNFD is a static description file, not a dynamic configuration file. The metadata description in the VNFD is not changed during the whole VNF lifecycle. Some VNF parameters described in the VNFD can be declared to be configurable during the VNF design phase, and further be configured by the VNFM during or after VNF instantiation. 
+
 
 
 ### Pods
