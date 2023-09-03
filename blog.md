@@ -17,7 +17,7 @@ We know that network slicing is a technology that allows network operators to di
 
 
 VNFD's full name is [ Virtual Network Function Descriptor ]. A VNFD is a deployment template that describes a VNF in terms of deployment and operational behavior requirements. It also contains connectivity, interface, and virtualized resource requirements.
-The VNFD conforms to the GS NFV-SOL 001 specifications and standards specified by ETSI. The Virtual Network Function Descriptor (VNFD) file describes the instantiation parameters and operational behaviors of the VNFs. It contains KPIs, and other key requirements that can be used in the process of onboarding and managing the lifecycle of a VNF. Therefore, if you onboard all your VNFs successfully, then your VNFD should be like this:
+The VNFD conforms to the GS NFV-SOL 001 specifications and standards specified by ETSI. The Virtual Network Function Descriptor (VNFD) file describes the instantiation parameters and operational behaviors of the VNFs. It contains KPIs and other key requirements that can be used in the process of onboarding and managing the lifecycle of a VNF. Therefore, if you onboard all your VNFs successfully, then your VNFD should be like this:
 
 
 
@@ -25,7 +25,33 @@ The VNFD conforms to the GS NFV-SOL 001 specifications and standards specified b
 
 
 
-As you can see, every VNFD is matched with its represented VNF and its IP address, VNFD acts as a blueprint or template for VNF. And also be aware that The VNFD is a static description file, not a dynamic configuration file. The metadata description in the VNFD is not changed during the whole VNF lifecycle. Some VNF parameters described in the VNFD can be declared to be configurable during the VNF design phase, and further be configured by the VNFM during or after VNF instantiation. This use case provides a scenario where the VNF configurable parameters described in the VNFD are provisioned.
+As you can see, every VNFD is matched with its represented VNF and its IP address, VNFD acts as a blueprint or template for VNF. And also be aware that The VNFD is a static description file, not a dynamic configuration file. The metadata description in the VNFD is not changed during the whole VNF lifecycle. Some VNF parameters described in the VNFD can be declared to be configurable during the VNF design phase, and further be configured by the VNFM during or after VNF instantiation. 
+
+
+The UML representation of the VNFD high-level structure is shown in the figure below.
+
+
+![vnfd2](https://github.com/Leon777-coder/blog/assets/69491904/cb5a209f-692e-4ae8-9693-fb0622be6901)
+
+
+
+The ETSI released a specification that defines the requirements for the structure and format of a VNFD. As you can see, this graph illustrates the high‐level structure of a VNFD. The VNFD is composed of one or many virtual deployment units (VDUs) that describe the deployment resources and operation behavior of a VNF component (VNFC). VDUs are virtual machines that host the VNF or parts of it. Each part of the VNF is a VNFC and can be deployed on one or more VDUs. Each VDU is characterized, among other elements, by the software image loaded on it and the resources needed to deploy it. A NS(Network Service) might contain different VNF. A VNF might also contains different VDU.Each level puts constraints on the subsequent levels, information in a lower level does not appear in a higher level.
+
+
+This following graph shows the composition of virtual deployment unit in a VNFD: 
+
+
+![vnfd3](https://github.com/Leon777-coder/blog/assets/69491904/6f38157c-93d0-4a7e-8253-92c5676dcd14)
+
+
+This graph illustrates a VDU deployment view. A VDU describes mainly the virtual compute (VC), virtual storage (VS), and virtual memory (VM) resources that are necessary for deploying a VNFC, and it could be linked via connection points (CPD) to other VDUs or to external VDUs that belong to other VNFs via external CPD. Virtual links in the VNFD indicate how the VDUs are connected and via which CPD. This means that different VDUs can be connected to each other through the CPD. However in free5GC the things might be dfferent
+
+
+
+
+
+
+
 
 
 
