@@ -8,7 +8,7 @@ Before you read this article, I highly recommend you read this blog article firs
 
 We know that network slicing is a technology that allows network operators to divide the physical network infrastructure into multiple customized virtual network slices, each of which can meet specific needs and use cases. These slices can run independently on the same physical network infrastructure. And one of the most important of 5G network slicing is Virtual Network Functions (VNFs). VNFs are virtualized network services running on open computing platforms formerly carried out by proprietary, in this free5GC network slicing experiment, the VNFs we have in the experiment are NFs we have in free5GC, like UPF, NSSF, UDM...etc. And this is what it should be like when you onboard all the VNFs to the Openstack
 
-![vnf on OS](./vnf.jpg)
+![vnf on OS]([./vnf.jpg](https://github.com/Leon777-coder/blog/assets/69491904/c36da1be-d22a-4f3a-8af1-69117fc5f04c))
 
 
 You might have seen this words a few times already, but what is VNFD?
