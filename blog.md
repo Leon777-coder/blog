@@ -16,11 +16,17 @@ We know that network slicing is a technology that allows network operators to di
 
 
 
-VNFD's full name is [ Virtual Network Function Descriptor ]. VNFD acts as a blueprint or template for VNF. A VNFD is a deployment template that describes a VNF in terms of deployment and operational behavior requirements. It also contains connectivity, interface, and virtualized resource requirements.
+VNFD's full name is [ Virtual Network Function Descriptor ]. A VNFD is a deployment template that describes a VNF in terms of deployment and operational behavior requirements. It also contains connectivity, interface, and virtualized resource requirements.
 The VNFD conforms to the GS NFV-SOL 001 specifications and standards specified by ETSI. The Virtual Network Function Descriptor (VNFD) file describes the instantiation parameters and operational behaviors of the VNFs. It contains KPIs, and other key requirements that can be used in the process of onboarding and managing the lifecycle of a VNF. Therefore, if you onboard all your VNFs successfully, then your VNFD should be like this:
 
 
-Be noticed that the VNFD is a static description file, not a dynamic configuration file. The metadata description in the VNFD is not changed during the whole VNF lifecycle. Some VNF parameters described in the VNFD can be declared to be configurable during the VNF design phase, and further be configured by the VNFM during or after VNF instantiation. 
+
+![vnfd status](https://github.com/Leon777-coder/blog/assets/69491904/bf330243-a439-4aa3-81ac-893e2e122b2e)
+
+
+
+As you can see, every VNFD is matched with its represented VNF and its IP address, VNFD acts as a blueprint or template for VNF. And also be aware that The VNFD is a static description file, not a dynamic configuration file. The metadata description in the VNFD is not changed during the whole VNF lifecycle. Some VNF parameters described in the VNFD can be declared to be configurable during the VNF design phase, and further be configured by the VNFM during or after VNF instantiation. This use case provides a scenario where the VNF configurable parameters described in the VNFD are provisioned.
+
 
 
 
