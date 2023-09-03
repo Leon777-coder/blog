@@ -1,19 +1,21 @@
 # Use NSD and VNFD to create a free5GC network slice
->[!NOTE]
-> Author: Leon Sawada
-> Date: 2023/9/3
-## Abstract
-Before you read this article, I highly recommend you read read this blog article first:  [How to deploy a free5GC network slice on OpenStack]([https://ieeexplore.ieee.org/document/10138542](https://free5gc.org/blog/network_slice/))
-## Introduce Kubernetes 
-Do you know why Kubernetes is called k8s?
 
-It's due to a shorthand notation that uses the first letter "k," followed by the number "8," and ending with the last letter "s" to represent the full name. 
-Kubernetes,stands as an open-source container orchestration platform that bestows organizations with the capacity to adeptly govern, deploy, and expand containerized applications. Initially conceived by Google and presently overseen by the Cloud Native Computing Foundation (CNCF), Kubernetes has ascended to become a pivotal technological underpinning within the realm of contemporary cloud-native computing.
+### Overview
 
-For those who find themselves unacquainted with the intricacies of Kubernetes, let us embark on an exploration of its architectural framework.
+Before you read this article, I highly recommend you read this blog article first:  [**How to deploy a free5GC network slice on OpenStack**](https://free5gc.org/blog/network_slice/)This blog article is written by my friend Daniel Hsieh, and in his article, he went through the entire process about how to deploy a free5GC network slice on OpenStack. He also introduces some architectures we need to know when we were deploying the free5GC network slice. However, there are still some details remaining, so in this blog article, I will explore more details and what role these components play in the overall experiment.
 
-![](./kubernetes_architecture.jpg)
-I understand that the image presented above might appear intricate at first glance. However, there's no need for concern. Allow me to guide you through each component step by step.
+### VNFD 
+
+We know that network slicing is a technology that allows network operators to divide the physical network infrastructure into multiple customized virtual network slices, each of which can meet specific needs and use cases. These slices can run independently on the same physical network infrastructure. And one of the most important of 5G network slicing is Virtual Network Functions (VNFs). VNFs are virtualized network services running on open computing platforms formerly carried out by proprietary, in this free5GC network slicing experiment, the VNFs we have in the experiment are NFs we have in free5GC, like UPF, NSSF, UDM...etc. And this is what it should be like when you onboard all the VNFs to the Openstack
+
+![vnf on OS](./vnf.jpg)
+
+
+You might have seen this words a few times already, but what is VNFD?
+
+VNFD's full name is [ Virtual Network Function Descriptor ].
+
+
 ### Pods
 A "Pod" stands as the most diminutive executable entity within the Kubernetes ecosystem. It possesses the capability to encompass either an individual container or a collective assembly of containers. The subsequent enumeration outlines several salient distinctions that set it apart from the act of directly launching a standalone container.
 
