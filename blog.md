@@ -103,7 +103,7 @@ topology_template:
           vendor: tacker
 ```
 
-In the above NSD template, VL1 and VL2 are substituting the virtual links of VNF1.If we want to apply the NFs we have in free5GC, just import these NFs into the VNF to which they belong. 
+In the above NSD template, VL1 and VL2 are substituting the virtual links of VNF1. If we want to apply the NFs we have in free5GC, just import these NFs into the VNF to which they belong. 
 
 To onboard the above NSD:
 
