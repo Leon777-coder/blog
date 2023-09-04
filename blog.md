@@ -68,7 +68,10 @@ This graph illustrates a VDU deployment view. A VDU describes mainly the virtual
 
 ### NSD
 
-NSD is a template file, whose parameters follow the ETSI MANO specification, used by the NFV Orchestrator (NFVO) for deploying network services (as a combination of multiple VNFs). Which consists of information used by the NFV Orchestrator (NFVO) for the life cycle management of an NS. Just like VNFD, NSD is also 
+NSD is a template file, whose parameters follow the ETSI MANO specification, used by the NFV Orchestrator (NFVO) for deploying network services (as a combination of multiple VNFs). Which consists of information used by the NFV Orchestrator (NFVO) for the life cycle management of an NS. Just like VNFD, 
+NSD is also a static configuration file.
+
+
 
 An NS is a composition of Network Functions (NF) arranged as a set of functions with unspecified connectivity between them or according to one or more forwarding graphs. As the following figure shows, the description of an NS as used by the NFV Management and Orchestration (MANO) functions to deploy an NS instance includes or references the descriptors of its constituent objects:
 
@@ -119,8 +122,7 @@ And this is also how we can use NSD to import all the VNFs we want to create net
 
 ### Deployment flavor
 
-Please go back to the VNFD high-level structure, On the right side we can see the DnfDf, which stands for VNF deployment flavor. Deployment flavor is a very important concept in NSD and VNFD, therefore it needs to be explained separately. Since VNFD and NSD are not dynamic configuration files but static configuration files. Even static configuration file has their own advantages, however, they are irreversible and lack of flexibility. To overcome this problem, we have a concept called deployment flavor. While we are using these static configuration files, we can have different deployment flavors, therefore when we are deploying these static configuration files, we can have different ways to deploy them. For example, when we deploy them we use the 10 MB memory,  and we use 100 MB memory to deploy another one. In this example, while we are deploying our deployment parameters are different, then we can define it into deployment flavor. Deployment flavor helps NSD and VNFD to increase their flexibility as a static configuration file. Make sure it's not 100% unchangeable. While we are deploying we can say we are deploying Deployment_Flavor
-#2, Deployment_Flavor#3,Deployment_Flavor#4. Therefore we can deploy different NS and VNF for different specific needs. Add some deployment flexibility as much as possible under the limitation that they are static configuration files.
+Please go back to the VNFD high-level structure, On the right side we can see the DnfDf, which stands for VNF deployment flavor. Deployment flavor is a very important concept in NSD and VNFD, therefore it needs to be explained separately. Since VNFD and NSD are not dynamic configuration files but static configuration files. Even static configuration file has their own advantages, however, they are irreversible and lack of flexibility. To overcome this problem, we have a concept called deployment flavor. While we are using these static configuration files, we can have different deployment flavors, therefore when we are deploying these static configuration files, we can have different ways to deploy them. For example, when we deploy them, we use the 10 MB memory, and we use 100 MB memory to deploy another one. In this example, while we are deploying our deployment parameters are different, then we can define it into deployment flavor. Deployment flavor helps NSD and VNFD to increase their flexibility as a static configuration file. Make sure it's not 100% unchangeable. We can deploy different type of Deployment_Flavor that case needs, like Deployment_Flavor#2, Deployment_Flavor#3, Deployment_Flavor#4. Therefore we can deploy different NS and VNF for different specific needs. Add some deployment flexibility as much as possible under the limitation that they are static configuration files.
 
 ![image](https://github.com/Leon777-coder/blog/assets/69491904/ca4800c4-0248-4868-8eb1-20a4ab580730)
 
