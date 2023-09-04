@@ -119,7 +119,7 @@ And this is also how we can use NSD to import all the VNFs we want to create net
 
 ### Deployment flavor
 
-Please go back to the VNFD high-level structure, On the right side we can see the DnfDf, which stands for VNF deployment flavor. Deployment flavor is a very important concept in NSD and VNFD， therefore it needs to be explained separately. Since VNFD and NSD are not dynamic configuration files but static configuration files. Even static configuration file has their own advantages, however, they are irreversible and lack of flexibility. To overcome this problem, we have a concept called deployment flavor. While we are using these static configuration files, we can have different deployment flavors, therefore when we are deploying these static configuration files, we can have different ways to deploy them. For example, when we deploy them we use the 10 MB memory,  and we use 100 MB memory to deploy another one. In this example, while we are deploying our deployment parameters are different, then we can define it into deployment flavor. Deployment flavor helps NSD and VNFD to increase their flexibility as a static configuration file. Make sure it's not 100% unchangeable. While we are deploying we can say we are deploying Deployment_Flavor
+Please go back to the VNFD high-level structure, On the right side we can see the DnfDf, which stands for VNF deployment flavor. Deployment flavor is a very important concept in NSD and VNFD, therefore it needs to be explained separately. Since VNFD and NSD are not dynamic configuration files but static configuration files. Even static configuration file has their own advantages, however, they are irreversible and lack of flexibility. To overcome this problem, we have a concept called deployment flavor. While we are using these static configuration files, we can have different deployment flavors, therefore when we are deploying these static configuration files, we can have different ways to deploy them. For example, when we deploy them we use the 10 MB memory,  and we use 100 MB memory to deploy another one. In this example, while we are deploying our deployment parameters are different, then we can define it into deployment flavor. Deployment flavor helps NSD and VNFD to increase their flexibility as a static configuration file. Make sure it's not 100% unchangeable. While we are deploying we can say we are deploying Deployment_Flavor
 #2, Deployment_Flavor#3,Deployment_Flavor#4. Therefore we can deploy different NS and VNF for different specific needs. Add some deployment flexibility as much as possible under the limitation that they are static configuration files.
 
 ![image](https://github.com/Leon777-coder/blog/assets/69491904/ca4800c4-0248-4868-8eb1-20a4ab580730)
@@ -131,7 +131,7 @@ Please go back to the VNFD high-level structure, On the right side we can see th
 
 
 
-That's it, I hope this article can help you learn more about 5G network slicing, even if you go back and read this previous blog post [**How ​​to deploy free5GC network slicing on OpenStack**](https://free5gc.org/blog/network_slice/) Now I think you will have a clearer idea of ​​how the whole experiment works. Learning the theory behind the scenes will always help you further your studies.
+That's it, I hope this blog article can help you learn more about 5G network slicing, even if you go back and read this previous blog post [**How ​​to deploy free5GC network slicing on OpenStack**](https://free5gc.org/blog/network_slice/) now, I think you will have a clearer idea of ​​how the whole experiment works. Learning the theory behind the scenes will always help you further your studies.
 
 
 
@@ -151,4 +151,4 @@ ETSI GS NFV-IFA 011 V2.4.1
 ETSI GS NFV-IFA 014 V3.3.1
 
 ## About
-Greetings everyone, My name is Leon Sawada, I am a 2nd-year master's student in NYCU Wireless Internet Research and Engineering (WIRE) Laboratory. My research field is network slicing, and I will be very grateful if this blog article help you understand more about these components in network slicing. Best wishes.
+Greetings everyone, my name is Leon Sawada, I am a 2nd-year master's student in NYCU Wireless Internet Research and Engineering (WIRE) Laboratory. My research field is network slicing, and I will be very grateful if this blog article help you understand more about these components in network slicing. Best wishes.
