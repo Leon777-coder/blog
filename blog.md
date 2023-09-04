@@ -9,7 +9,7 @@ Before you read this article, I highly recommend you read this blog article firs
 
 ### VNFD 
 
-VNFD, You may have seen this word a few times in Daniel’s blog posts already, but what exactly is VNFD? Before I tell you the answer directly, there is something I want to know first.
+VNFD, You may have seen this word a few times in Daniel’s blog posts already, but what exactly is VNFD? Before I tell you the answer directly, there is something I want you to know first.
 
 
 We know that network slicing is a technology that allows network operators to divide physical network infrastructure into multiple customized virtual network slices, and each of the slices can meet specific requirements for specific use cases.  One of the most important functions of 5G network slicing is the virtual network function (VNF). VNF is a virtualized network service running on an open computing platform. In this free5GC network slicing experiment, the VNF in our experiment is our NF in free5GC, such as UPF, NSSF, UDM... etc. When you load all your VNFs into OpenStack, it should be like this:
