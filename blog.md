@@ -70,7 +70,7 @@ This graph illustrates a VDU deployment view. A VDU describes mainly the virtual
 
 NSD is a template file, whose parameters follow the ETSI MANO specification, used by the NFV Orchestrator (NFVO) for deploying network services (as a combination of multiple VNFs). Which consists of information used by the NFV Orchestrator (NFVO) for the life cycle management of an NS. Just like VNFD, NSD is also 
 
-An NS is a composition of Network Functions (NF) arranged as a set of functions with unspecified connectivity between them or according to one or more forwarding graphs.As the following figure shows, the description of an NS as used by the NFV Management and Orchestration (MANO) functions to deploy an NS instance includes or references the descriptors of its constituent objects:
+An NS is a composition of Network Functions (NF) arranged as a set of functions with unspecified connectivity between them or according to one or more forwarding graphs. As the following figure shows, the description of an NS as used by the NFV Management and Orchestration (MANO) functions to deploy an NS instance includes or references the descriptors of its constituent objects:
 
 ![NSD1](https://github.com/Leon777-coder/blog/assets/69491904/5ce26407-fd11-4e58-b2b6-dc0f9c1fd31f)
 
