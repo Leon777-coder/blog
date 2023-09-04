@@ -1,4 +1,4 @@
-# The role of VNFD and NSD in 5G Network slicing
+# The role of VNFD and NSD in 5G Network Slicing
 
 
 
