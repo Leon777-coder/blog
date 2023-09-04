@@ -17,7 +17,7 @@ We know that network slicing is a technology that allows network operators to di
 
 
 VNFD's full name is [ Virtual Network Function Descriptor ]. A VNFD is a deployment template that describes a VNF in terms of deployment and operational behavior requirements. It also contains connectivity, interface, and virtualized resource requirements.
-The VNFD conforms to the GS NFV-SOL 001 specifications and standards specified by ETSI. The Virtual Network Function Descriptor (VNFD) file describes the instantiation parameters and operational behaviors of the VNFs. It contains KPIs and other key requirements that can be used in the process of onboarding and managing the lifecycle of a VNF. Therefore, if you onboard all your VNFs successfully, then your VNFD should be like this:
+The VNFD conforms to the GS NFV-SOL 001 specifications and standards specified by ETSI. The Virtual Network Function Descriptor (VNFD) file describes the instantiation parameters and operational behaviors of the VNFs. It contains KPIs and other key requirements that can be used in the process of onboarding and managing the lifecycle of a VNF. Therefore, if you onboard all your VNFs successfully, then your VNFD should also be like this:
 
 
 
@@ -35,16 +35,18 @@ The UML representation of the VNFD high-level structure is shown in the figure b
 
 
 
-The ETSI released a specification that defines the requirements for the structure and format of a VNFD. As you can see, this graph illustrates the high‐level structure of a VNFD. The VNFD is composed of one or many virtual deployment units (VDUs) that describe the deployment resources and operation behavior of a VNF component (VNFC). VDUs are virtual machines that host the VNF or parts of it. Each part of the VNF is a VNFC and can be deployed on one or more VDUs. Each VDU is characterized, among other elements, by the software image loaded on it and the resources needed to deploy it. A NS(Network Service) might contain different VNF. A VNF might also contains different VDU.Each level puts constraints on the subsequent levels, information in a lower level does not appear in a higher level.
+The ETSI released a specification that defines the requirements for the structure and format of a VNFD. As you can see, this graph illustrates the high‐level structure of a VNFD. The VNFD is composed of one or many virtual deployment units (VDUs) that describe the deployment resources and operation behavior of a VNF component (VNFC). VDUs are virtual machines that host the VNF or parts of it. Each part of the VNF is a VNFC and can be deployed on one or more VDUs. Each VDU is characterized, among other elements, by the software image loaded on it and the resources needed to deploy it. An NS(Network Service) might contain different VNF. A VNF might also contain different VDU. Each level puts constraints on the subsequent levels, information in a lower level does not appear in a higher level.This is a complex and flexible architecture, which perfectly 
 
 
-This following graph shows the composition of virtual deployment unit in a VNFD: 
+The following graph shows the composition of the virtual deployment unit in a VNFD: 
 
 
 ![vnfd3](https://github.com/Leon777-coder/blog/assets/69491904/6f38157c-93d0-4a7e-8253-92c5676dcd14)
 
 
-This graph illustrates a VDU deployment view. A VDU describes mainly the virtual compute (VC), virtual storage (VS), and virtual memory (VM) resources that are necessary for deploying a VNFC, and it could be linked via connection points (CPD) to other VDUs or to external VDUs that belong to other VNFs via external CPD. Virtual links in the VNFD indicate how the VDUs are connected and via which CPD. This means that different VDUs can be connected to each other through the CPD. However in free5GC the things might be dfferent
+This graph illustrates a VDU deployment view. A VDU describes mainly the virtual compute (VC), virtual storage (VS), and virtual memory (VM) resources that are necessary for deploying a VNFC, and it could be linked via connection points (CPD) to other VDUs or to external VDUs that belong to other VNFs via external CPD. Virtual links in the VNFD indicate how the VDUs are connected and via which CPD. This means that different VDUs can be connected to each other through the CPD. However, in free5GC network slicing, things might be different. For 5G's NS (network slice), since there are already many VNFs in 5G, under the 5G network slice architecture, an NS contains many VNFs, but a VNF always contains one and only VDU.
+
+We use AMF as an example, (AMF is a NF in free5GC) AMF is an important and complete function and we didn't break it into more pieces. Therefore, there are not many examples in our 5G of a VNF having many VDUs. Each VNF contains one PDU only, and the via connection points (CPD) function will no longer be used in 5G network slicing, although it is a powerful and convenient function.
 
 
 
