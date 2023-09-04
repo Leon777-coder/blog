@@ -5,7 +5,7 @@
 
 ## Overview
 
-Before you read this article, I highly recommend you read this blog article first:  [**How to deploy a free5GC network slice on OpenStack**](https://free5gc.org/blog/network_slice/)This blog article is written by my friend Daniel Hsieh, and in his article, he went through the entire process about how to deploy a free5GC network slice on OpenStack. He also introduces some architectures we need to know when we were deploying the free5GC network slice. However, there are still some details remaining, so in this blog article, I will explore more details and what role these components play in the overall experiment. Daniel used 8 steps to explain how to [deploy a free5GC Network Slice] .In this article, I am going to focus on VNFD and NSD, which appear in steps No.5 and No.6, these two most important concepts while we are creating the network slice. By this article, you will understand more about the 5G network slicing. 
+Before you read this article, I highly recommend you read this blog article first:  [**How to deploy a free5GC network slice on OpenStack**](https://free5gc.org/blog/network_slice/). This blog article is written by my friend Daniel Hsieh, and in his article, he went through the entire process of how to deploy a free5GC network slice on OpenStack. He also introduces some architectures we need to know when we were deploying the free5GC network slice. However, there are still some details remaining, so in this blog article, I will explore more details and what role these components play in the overall experiment. Daniel used 8 steps to explain how to [deploy a free5GC Network Slice] .In this article, I am going to focus on VNFD and NSD, which appear in steps No.5 and No.6, these two most important concepts while we are creating the network slice. By this article, you will understand more about the 5G network slicing. 
 
 ### VNFD 
 
@@ -19,7 +19,7 @@ We know that network slicing is a technology that allows network operators to di
 
 
 
-So what is VNFD? What is the connection between it and VNF? VNFD's full name is [ Virtual Network Function Descriptor ]. A VNFD is a deployment template that describes a VNF in terms of deployment and operational behavior requirements. It also contains connectivity, interface, and virtualized resource requirements. The VNFD conforms to the GS NFV-SOL 001 specifications and standards specified by ETSI. The Virtual Network Function Descriptor (VNFD) file describes the instantiation parameters and operational behaviors of the VNFs. It contains KPIs and other key requirements that can be used in the process of onboarding and managing the lifecycle of a VNF. Each VNFD template has the following fields:
+So what is VNFD? What is the connection between it and VNF? VNFD's full name is Virtual Network Function Descriptor. A VNFD is a deployment template that describes a VNF in terms of deployment and operational behavior requirements. It also contains connectivity, interface, and virtualized resource requirements. The VNFD conforms to the GS NFV-SOL 001 specifications and standards specified by ETSI. The Virtual Network Function Descriptor (VNFD) file describes the instantiation parameters and operational behaviors of the VNFs. It contains KPIs and other key requirements that can be used in the process of onboarding and managing the lifecycle of a VNF. Each VNFD template has the following fields:
 
 ![VNFD TEM](https://github.com/Leon777-coder/blog/assets/69491904/ed32de18-b516-4921-bc36-43f291171230)
 
@@ -52,7 +52,8 @@ The ETSI released a specification that defines the requirements for the structur
 The following graph shows the composition of the virtual deployment unit in a VNFD: 
 
 
-![vnfd3](https://github.com/Leon777-coder/blog/assets/69491904/6f38157c-93d0-4a7e-8253-92c5676dcd14)
+![VDU](https://github.com/Leon777-coder/blog/assets/69491904/7638904f-579b-45f8-9f80-84b267d18c63)
+
 
 
 This graph illustrates a VDU deployment view. A VDU describes mainly the virtual compute (VC), virtual storage (VS), and virtual memory (VM) resources that are necessary for deploying a VNFC, and it could be linked via connection points (CPD) to other VDUs or to external VDUs that belong to other VNFs via external CPD. Virtual links in the VNFD indicate how the VDUs are connected and via which CPD. This means that different VDUs can be connected to each other through the CPD. However, in free5GC network slicing, things might be different. For 5G's NS (network slice), since there are already many VNFs in 5G, under the 5G network slice architecture, an NS contains many VNFs, but a VNF always contains one and only VDU. We use AMF as an example, (AMF is an NF in free5GC) AMF is an important and complete function and we didn't break it into more pieces. Therefore, there are not many examples in our 5G of a VNF having many VDUs. Each VNF contains one PDU only, and the via connection points (CPD) function will no longer be used in 5G network slicing, although it is a powerful and convenient function.
